@@ -1,5 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
+\usepackage{hyperref}
+
 \usepackage{geometry}
 \geometry{a4paper, left=30mm, right=20mm, top=30mm, bottom=30mm}
 
@@ -20,6 +22,7 @@
 \usepackage{ellipsis}
 \usepackage{multirow}
 \usepackage{tocloft}
+\usepackage{titlesec}
 
 \usepackage[autostyle]{csquotes}
 \selectlanguage{magyar}
@@ -29,6 +32,7 @@
 \bibliographystyle{apacite}
 
 \usepackage{url}
+\usepackage{import}
 \usepackage{textcomp}
 
 \usepackage{tikz}
@@ -42,16 +46,22 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
-\input{./misc/defines.tex}
-
 \begin{document}
+    \input{./misc/defines.tex}
     \input{./misc/titlepage.tex}
 
     \setlength{\cftbeforechapskip}{.2ex}
     \setlength{\cftbeforesecskip}{-.5ex}
     \tableofcontents
+    \pagebreak
 
     \input{./chapters/01-bevezetes.tex}
+    \subimport{./chapters/02-az-adatgyujtes-evolucioja/}{index.tex}
+    \subimport{./chapters/03-a-jogi-szabalyozas-koncepcioja/}{index.tex}
+    \subimport{./chapters/04-nemzetkozi-szabalyozas/}{index.tex}
+    \subimport{./chapters/05-hazai-szabalyozas/}{index.tex}
+
+    \pagebreak
 
     \bibliography{references.bib}
 \end{document}
