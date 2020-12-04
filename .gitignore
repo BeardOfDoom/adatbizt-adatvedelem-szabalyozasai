@@ -2,7 +2,7 @@
 build
 
 ## Output PDF
-*.pdf
+*main-paper.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
